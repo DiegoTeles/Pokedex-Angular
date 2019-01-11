@@ -1,12 +1,14 @@
-<div *ngFor="let pokemon of pokemonList" class="col-md-3 col-md-offset-1 text-center box">
-  <div class="row">
-    <div class="col-md-12">
-      <img [src]="pokemon.imageurl" [alt]="pokemon.id" height="150" width="150" />
-    </div>
-    <div class="row">
-      <div class="col-md-12 link">
-        <a [routerLink]="['/details',pokemon.id]">{{ pokemon.name | titlecase }}</a>
+<h2>Listar Pokémons</h2>
+<div *ngFor="let pokemon of pokemonList"  class="col-md-3 col-md-offset-1 text-center box">
+  <div class="row"  >
+    <div class="col-md-12 ">
+        <a [routerLink]="['/details',pokemon.id]"><img [src]="pokemon.imageurl" [alt]="pokemon.id" height="110px" width="110px" /></a>
       </div>
+        <div class="col-md-12 link ">
+          <b>
+            <h5 class="card-title" >{{ pokemon.name | titlecase }}</h5>
+          </b>
+       </div>
     </div>
-  </div>
+    <hr/>
 </div>

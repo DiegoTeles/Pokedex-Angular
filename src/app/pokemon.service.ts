@@ -26,7 +26,7 @@ export class PokemonService {
       .toPromise()
       .then((res: any) => {
         let pokemons: Pokemon[] = [];
-        let reducedPokemonEntries = res.pokemon_entries.splice(0, 50);
+        let reducedPokemonEntries = res.pokemon_entries.splice(0, 9);
 
         reducedPokemonEntries.forEach((entry) => {
           let pokemon = new Pokemon();

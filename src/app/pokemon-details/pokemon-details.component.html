@@ -1,24 +1,41 @@
-<div *ngIf="pokemon" class="details-container">
-  <img [src]="pokemon.imageurl">
-  <div>{{pokemon.name | titlecase}}</div>
-  <h4>Types:</h4>
+<div class="container">
+  <h2>Detalhes do Pokémon</h2>
+  <hr/>
+  <div class="row">
+    <div class="col-6" *ngIf="pokemon">
+      <img class="fotoPoke" [src]="pokemon.imageurl" height="170" width="170" />
+    </div>
+
+    <div class="col-6">
+      <div>
+        <h3>{{ pokemon.name | titlecase }}</h3>
+      </div>
+      <h4><b>Tipo:</b></h4>
+      <ul>
+        <li id="tipo" class="badge badge-info" *ngFor="let type of pokemon.types">
+              {{ type }}
+        </li>
+      </ul>
+      <hr/>
+<div class="borderDiv col-6">
+
+  <h4><b>Status:</b></h4>
   <ul>
-    <li *ngFor="let type of pokemon.types">
-      {{ type }}
+    <li class="statusGeral"  *ngFor="let stat of pokemon.stats">
+      <p class="myStatus"> {{ stat.name }}:  <b class="myValue"> {{ stat.value }} </b></p> 
     </li>
   </ul>
 
-  <h4>Stats:</h4>
-  <ul>
-    <li *ngFor="let stat of pokemon.stats">
-      {{ stat.name }}: {{ stat.value }}
-    </li>
-  </ul>
+</div>
 
-  <h4>Sprites:</h4>
-  <div *ngFor="let sprite of pokemon.sprites" class="col-md-3">
-    <img [src]="sprite.imagePath" />
-    <br>
-    <span>{{sprite.name}}</span>
+      <!-- </div> -->
+    </div>
   </div>
+</div>
+
+<hr/>
+<h4><b>Versão Shiny <span>(Costas/Frente)</span>:</b></h4>
+<div *ngFor="let sprite of pokemon.sprites" class="col-md-3">
+  <img [src]="sprite.imagePath" /> <br />
+  <!-- <span>{{ sprite.name }}</span> -->
 </div>

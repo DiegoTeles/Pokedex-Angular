@@ -7,8 +7,9 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
-  styleUrls: ['./pokemon-details.component.css']
+  styleUrls: ['./pokemon-details.component.css'],
 })
+
 export class PokemonDetailsComponent implements OnInit {
   id: number;
   pokemon: Pokemon;
